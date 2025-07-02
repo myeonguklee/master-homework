@@ -1,7 +1,7 @@
-import { UserProfileForm } from "../week5/components/UserProfileForm";
+import { UserProfileFormUpdateContainer } from "../week5/UserProfileFormUpdateContainer";
 
 function App() {
-  return <UserProfileForm />;
+  return <UserProfileFormUpdateContainer />;
 }
 
 export default App;
