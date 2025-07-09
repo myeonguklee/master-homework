@@ -1,0 +1,171 @@
+{
+    "title": "사용자 프로필 업데이트 테스트",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 938,
+            "height": 735,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "http://localhost:5175/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "http://localhost:5175/",
+                    "title": "Vite + React + TS"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/수정하기"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/main/div/form/div[3]/button"
+                ],
+                [
+                    "pierce/button"
+                ],
+                [
+                    "text/수정하기"
+                ]
+            ],
+            "offsetY": 32.3984375,
+            "offsetX": 180
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/사용자 이름"
+                ],
+                [
+                    "#username"
+                ],
+                [
+                    "xpath///*[@id=\"username\"]"
+                ],
+                [
+                    "pierce/#username"
+                ],
+                [
+                    "text/홍길동"
+                ]
+            ],
+            "offsetY": 24.0859375,
+            "offsetX": 57
+        },
+        {
+            "type": "change",
+            "value": "김철수",
+            "selectors": [
+                [
+                    "aria/사용자 이름"
+                ],
+                [
+                    "#username"
+                ],
+                [
+                    "xpath///*[@id=\"username\"]"
+                ],
+                [
+                    "pierce/#username"
+                ],
+                [
+                    "text/홍길동"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/이메일"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ],
+                [
+                    "text/hong@example.com"
+                ]
+            ],
+            "offsetY": 25.4921875,
+            "offsetX": 36
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "CapsLock"
+        },
+        {
+            "type": "keyUp",
+            "key": "CapsLock",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kim@example.com",
+            "selectors": [
+                [
+                    "aria/이메일"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ],
+                [
+                    "text/hong@example.com"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/저장하기"
+                ],
+                [
+                    "button.css-1ve2qaa"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/main/div/form/div[4]/button[1]"
+                ],
+                [
+                    "pierce/button.css-1ve2qaa"
+                ],
+                [
+                    "text/저장하기"
+                ]
+            ],
+            "offsetY": 19.3046875,
+            "offsetX": 83
+        }
+    ]
+}
