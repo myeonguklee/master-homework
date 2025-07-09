@@ -1,16 +1,13 @@
 import { http, HttpResponse } from "msw";
 
 export const handlers = [
-  // 예시 핸들러
-  http.get("/api/users", () => {
-    return HttpResponse.json([
-      { id: 1, name: "John Doe" },
-      { id: 2, name: "Jane Smith" },
-    ]);
-  }),
-
-  http.post("/api/users", async ({ request }) => {
+  // 회원 정보 수정 API
+  http.post("/api/user/update", async ({ request }) => {
     const body = await request.json();
-    return HttpResponse.json({ id: 3, ...body });
+    return HttpResponse.json({
+      success: true,
+      message: "사용자 정보가 성공적으로 업데이트되었습니다!",
+      data: body,
+    });
   }),
 ];
