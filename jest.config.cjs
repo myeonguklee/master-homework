@@ -8,6 +8,8 @@ module.exports = {
   testMatch: [
     "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
     "<rootDir>/src/**/*.{test,spec}.{js,jsx,ts,tsx}",
+    "<rootDir>/week6/**/__tests__/**/*.{js,jsx,ts,tsx}",
+    "<rootDir>/week6/**/*.{test,spec}.{js,jsx,ts,tsx}",
   ],
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
@@ -15,6 +17,7 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
   collectCoverageFrom: [
     "src/**/*.{js,jsx,ts,tsx}",
+    "week6/**/*.{js,jsx,ts,tsx}",
     "!src/**/*.d.ts",
     "!src/main.tsx",
   ],

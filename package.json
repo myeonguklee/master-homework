@@ -15,12 +15,16 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "cypress:component": "cypress open --component",
-    "cypress:e2e": "cypress open --e2e"
+    "cypress:e2e": "cypress open --e2e",
+    "puppeteer:headless": "node puppeteer-test.cjs headless",
+    "puppeteer:non-headless": "node puppeteer-test.cjs non-headless",
+    "puppeteer:test": "node puppeteer-test.cjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@hookform/resolvers": "^5.1.1",
+    "puppeteer": "^24.12.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.59.0",
@@ -50,5 +54,10 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^7.0.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
