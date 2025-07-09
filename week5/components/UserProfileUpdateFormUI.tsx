@@ -30,7 +30,7 @@ export const UserProfileFormUI = ({
   handleCancel,
 }: UserProfileFormUIProps) => {
   return (
-    <S.FormContainer>
+    <S.FormContainer role="main">
       <S.FormTitle>사용자 프로필</S.FormTitle>
 
       {message && <S.MessageContainer>{message}</S.MessageContainer>}
