@@ -1,8 +1,45 @@
+"use client";
+
 import Image from "next/image";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Home() {
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">로딩 중...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      {/* 로그인/로그아웃 버튼 */}
+      <div className="absolute top-4 right-4">
+        {session ? (
+          <div className="flex items-center gap-4">
+            <span className="text-sm text-gray-600">
+              안녕하세요, {session.user?.name}님!
+            </span>
+            <button
+              onClick={() => signOut()}
+              className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+            >
+              로그아웃
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={() => signIn()}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+          >
+            로그인
+          </button>
+        )}
+      </div>
+
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -12,6 +49,23 @@ export default function Home() {
           height={38}
           priority
         />
+
+        {session ? (
+          <div className="text-center">
+            <h1 className="text-2xl font-bold mb-4">로그인 성공! 🎉</h1>
+            <p className="text-gray-600">
+              NextAuth.js가 정상적으로 작동하고 있습니다.
+            </p>
+          </div>
+        ) : (
+          <div className="text-center">
+            <h1 className="text-2xl font-bold mb-4">NextAuth.js 테스트</h1>
+            <p className="text-gray-600">
+              로그인하여 인증 기능을 테스트해보세요.
+            </p>
+          </div>
+        )}
+
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
             Get started by editing{" "}
