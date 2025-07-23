@@ -1,7 +1,7 @@
-import UserProfileUpdatePage from "../week6/UserProfileUpdatePage";
+import { ImageBitmapTransferPage } from "../week8/assignment";
 
 function App() {
-  return <UserProfileUpdatePage />;
+  return <ImageBitmapTransferPage />;
 }
 
 export default App;
